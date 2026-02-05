@@ -13,16 +13,18 @@
     
     let Id;
     startButton.addEventListener('click',()=>{
+        if (Id) return; 
         Id=setInterval(()=>{
-            
-            body.style.backgroundColor=randomColor();
-            console.log(randomColor());
+                body.style.backgroundColor=randomColor();
+                console.log(randomColor());
+           
             
         },2000);
     })
 
     stopButton.addEventListener('click',()=>{
         clearInterval(Id);
+        Id=null;
         console.log("Stopped");
         body.style.backgroundColor="#FFFFFF";
         
